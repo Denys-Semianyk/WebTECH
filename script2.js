@@ -23,8 +23,6 @@ function convert(input) {
     return output.trim(); 
 }
 
-console.log(convert("Test"))
-
 for (let name of names) {
     let binName = convert(name);
     
