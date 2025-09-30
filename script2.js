@@ -23,6 +23,7 @@ function convert(input) {
     return output.trim(); 
 }
 
+
 for (let name of names) {
     let binName = convert(name);
     
@@ -34,10 +35,10 @@ for (let name of names) {
         }
     }
     if (ones % 2 === 0){
-        console.log(`${name} passed the selection by binary evenness. ✅`);
+        goodbyespeak(name);
     }
     else{
-        console.log(`${name} not passed the selection by binary evenness. ❌`);
+        speak(name)
     }
     console.log(`${name} in binary: ${binName}`);
     console.log(`Number of ones in ${name}: ${ones}`);
