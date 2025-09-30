@@ -34,13 +34,14 @@ for (let name of names) {
             
         }
     }
+    
+    console.log(`${name} in binary: ${binName}`);
+    console.log(`Number of ones in ${name}: ${ones}`);
+
     if (ones % 2 === 0){
         goodbyespeak(name);
     }
     else{
         speak(name)
     }
-    console.log(`${name} in binary: ${binName}`);
-    console.log(`Number of ones in ${name}: ${ones}`);
-
 }
