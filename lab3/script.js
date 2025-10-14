@@ -217,7 +217,7 @@ function PiMultiplier(k) {
 }
 
 const pm1 = new PiMultiplier(2);
-const pm2 = new PiMultiplier(3);
+const pm2 = new PiMultiplier(0.66);
 const pm3 = new PiMultiplier(0.5);
 console.log(pm1.multiply(), pm2.multiply(), pm3.multiply());
 
