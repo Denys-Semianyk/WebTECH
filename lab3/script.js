@@ -1,10 +1,10 @@
 const car1 = new Object();
 car1.color = "red";
-car1.maxSpeed = 90;
+car1.maxSpeed = 63;
 car1.driver = {
   name: "Сем'яник Денис",
-  category: "B",
-  personalLimitations: "no night driving",
+  category: "C",
+  personalLimitations: "No driving at night",
 };
 car1.tuning = true;
 car1.numberOfAccidents = 0;
@@ -32,41 +32,37 @@ car2.drive = function () {
 car1.drive();
 car2.drive();
 
-function Truck(color, weight, avgSpeed, brand) {
+function Truck(color, weight, avgSpeed, brand, model) {
   this.color = color;
   this.weight = weight;
   this.avgSpeed = avgSpeed;
   this.brand = brand;
+  this.model = model;
   this.driver = null;
   this.trip = function () {
-    if (this.driver) {
-      if (this.driver.nightDriving) {
-        console.log(
-          `Driver ${this.driver.name} drives at night with truck ${this.brand}.`
-        );
-      } else {
-        console.log(
-          `Driver ${this.driver.name} does not drive at night with truck ${this.brand}.`
-        );
-      }
-    } else {
+    if (!this.driver) {
       console.log("No driver assigned.");
+    } else {
+      const { name, nightDriving, experience } = this.driver;
+      const nightMsg = nightDriving ? "drives at night" : "does not drive at night";
+      console.log(`Driver ${name} ${nightMsg} and has ${experience} years of experience.`);
     }
   };
 }
 
-Truck.AssignDriver = function (truck, driverName, nightDriving) {
-  truck.driver = { name: driverName, nightDriving: nightDriving };
+Truck.AssignDriver = function (truck, name, nightDriving, experience) {
+  truck.driver = { name, nightDriving, experience };
 };
 
-const truck1 = new Truck("yellow", 4000, 90, "MAN");
-const truck2 = new Truck("white", 3500, 80, "Volvo");
+const truck1 = new Truck("yellow", 4000, 90, "MAN", "TGS");
+const truck2 = new Truck("white", 3500, 80, "Volvo", "FH16");
 
-Truck.AssignDriver(truck1, "Сем'яник Денис", true);
-Truck.AssignDriver(truck2, "Сем'яник Денис", false);
+Truck.AssignDriver(truck1, "Сем'яник Денис", true, 5);
+Truck.AssignDriver(truck2, "Сем'яник Денис", false, 3);
 
 truck1.trip();
 truck2.trip();
+
 
 class Square {
   constructor(a) {
@@ -195,45 +191,52 @@ class Parallelogram extends Rhombus {
   }
 }
 
-function Triangular(a = 3, b = 4, c = 5) {
-  this.a = a;
-  this.b = b;
-  this.c = c;
+function Triangular({ a = 3, b = 4, c = 5 } = {}) {
+  return { a, b, c };
 }
 
-const t1 = new Triangular();
-const t2 = new Triangular(6, 8, 10);
-const t3 = new Triangular(5, 5, 8);
+const t1 = Triangular();
+const t2 = Triangular({ a: 6, b: 8, c: 10 });
+const t3 = Triangular({ a: 5, b: 5, c: 8 });
+
 console.log("Triangular objects:");
 console.log(`t1: a=${t1.a}, b=${t1.b}, c=${t1.c}`);
 console.log(`t2: a=${t2.a}, b=${t2.b}, c=${t2.c}`);
 console.log(`t3: a=${t3.a}, b=${t3.b}, c=${t3.c}`);
 
+
 function PiMultiplier(k) {
-  this.k = k;
-  this.multiply = function () {
-    return Math.PI * this.k;
+  return function () {
+    return Math.PI * k;
   };
 }
 
-const pm1 = new PiMultiplier(2);
-const pm2 = new PiMultiplier(0.66);
-const pm3 = new PiMultiplier(0.5);
-console.log(pm1.multiply(), pm2.multiply(), pm3.multiply());
+const pm1 = PiMultiplier(2);
+const pm2 = PiMultiplier(0.66);
+const pm3 = PiMultiplier(0.5);
 
-function Painter(name) {
-  this.name = name;
-  this.paint = function (obj) {
+console.log(pm1(), pm2(), pm3());
+
+
+function Painter(color) {
+  return function (obj) {
     if (!obj.type) {
-      console.log(`Painter ${this.name} cannot paint: object has no 'type' property.`);
+      console.log("No 'type' property occurred!");
     } else {
-      console.log(`Painter ${this.name} paints a ${obj.type}.`);
+      console.log(`${color} ${obj.type}`);
     }
   };
 }
 
-const painter1 = new Painter("Leo");
-const obj1 = { type: "car" };
-const obj2 = { name: "something" };
-painter1.paint(obj1);
-painter1.paint(obj2);
+const PaintBlue = Painter("blue");
+const PaintRed = Painter("red");
+const PaintYellow = Painter("yellow");
+
+const obj1 = { maxSpeed: 280, type: "Truck", color: "purple" };
+const obj2 = { maxSpeed: 180, type: "Sportcar", color: "magenta" };
+const obj3 = { avgSpeed: 90, loadCapacity: 2400, isCar: true };
+
+PaintBlue(obj1);
+PaintRed(obj2);
+PaintYellow(obj3);
+
