@@ -63,7 +63,6 @@ Truck.AssignDriver(truck2, "Сем'яник Денис", false, 3);
 truck1.trip();
 truck2.trip();
 
-
 class Square {
   constructor(a) {
     this.a = a;
@@ -97,26 +96,14 @@ class Rectangle extends Square {
     this._b = b;
   }
 
-  get a() {
-    return this._a;
-  }
+  get a() { return this._a; }
+  set a(value) { this._a = value; }
 
-  set a(value) {
-    this._a = value;
-  }
-
-  get b() {
-    return this._b;
-  }
-
-  set b(value) {
-    this._b = value;
-  }
+  get b() { return this._b; }
+  set b(value) { this._b = value; }
 
   static help() {
-    console.log(
-      "Rectangle: opposite sides equal; 4 right angles; perimeter = 2*(a+b); area = a*b"
-    );
+    console.log("Rectangle: opposite sides equal; 4 right angles; perimeter = 2*(a+b); area = a*b");
   }
 
   length() {
@@ -191,6 +178,21 @@ class Parallelogram extends Rhombus {
   }
 }
 
+Square.help();
+Rectangle.help();
+Rhombus.help();
+Parallelogram.help();
+
+const s1 = new Square(5);
+const r1 = new Rectangle(6, 4);
+const rh1 = new Rhombus(5, 120, 60);
+const p1 = new Parallelogram(8, 5, 110, 70);
+
+s1.info();
+r1.info();
+rh1.info();
+p1.info();
+
 function Triangular({ a = 3, b = 4, c = 5 } = {}) {
   return { a, b, c };
 }
@@ -204,7 +206,6 @@ console.log(`t1: a=${t1.a}, b=${t1.b}, c=${t1.c}`);
 console.log(`t2: a=${t2.a}, b=${t2.b}, c=${t2.c}`);
 console.log(`t3: a=${t3.a}, b=${t3.b}, c=${t3.c}`);
 
-
 function PiMultiplier(k) {
   return function () {
     return Math.PI * k;
@@ -216,7 +217,6 @@ const pm2 = PiMultiplier(0.66);
 const pm3 = PiMultiplier(0.5);
 
 console.log(pm1(), pm2(), pm3());
-
 
 function Painter(color) {
   return function (obj) {
@@ -234,9 +234,8 @@ const PaintYellow = Painter("yellow");
 
 const obj1 = { maxSpeed: 280, type: "Truck", color: "purple" };
 const obj2 = { maxSpeed: 180, type: "Sportcar", color: "magenta" };
-const obj3 = { avgSpeed: 90, loadCapacity: 2400, isCar: true };
+const obj3 = { avgSpeed: 90, loadCapacity: 2400, isCar: true, type: "Truck" };
 
 PaintBlue(obj1);
 PaintRed(obj2);
 PaintYellow(obj3);
-
