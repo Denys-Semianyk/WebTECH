@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Hunt Game</title>
+    <link rel="stylesheet" href="lab4.css">
+</head>
+<body>
+
+    <div id="setup-screen">
+        <h1>Pixel Hunt</h1>
+        <div class="controls">
+            <label for="difficulty">Choose difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Hard</option>
+            </select>
+
+            <label for="color">Choose color:</label>
+            <select id="color">
+                <option value="">--Please choose an option--</option>
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+            </select>
+
+            <button id="start-btn">Start</button>
+        </div>
+    </div>
+
+    <div id="game-screen">
+        <div class="hud">
+            <span>score: <strong id="score-display">0</strong></span>
+            <span>time left for click: <strong id="timer-display">2</strong></span>
+        </div>
+        
+        <div id="game-area">
+            <div id="target"></div>
+        </div>
+    </div>
+
+    <script src="script4.js"></script>
+</body>
+</html>
