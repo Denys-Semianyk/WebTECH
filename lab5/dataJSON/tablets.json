@@ -1,0 +1,9 @@
+{
+  "categoryName": "Планшети",
+  "items": [
+    { "id": 301, "name": "Tab S8", "shortname": "tab_s8", "description": "Яскравий екран та стилус у комплекті.", "price": "28000 UAH" },
+    { "id": 302, "name": "Pad Air", "shortname": "pad_air", "description": "Легкість та потужність чіпа M1.", "price": "26000 UAH" },
+    { "id": 303, "name": "Mini Tab", "shortname": "mini_tab", "description": "Компактний розмір, поміститься у кишеню.", "price": "18000 UAH" },
+    { "id": 304, "name": "Pro Artist", "shortname": "pro_art", "description": "Величезний екран для малювання.", "price": "40000 UAH" }
+  ]
+}

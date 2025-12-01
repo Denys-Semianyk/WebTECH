@@ -1,0 +1,9 @@
+{
+  "categoryName": "Смартфони",
+  "items": [
+    { "id": 201, "name": "Phone 14", "shortname": "phone14", "description": "Класичний дизайн та нова камера.", "price": "30000 UAH" },
+    { "id": 202, "name": "Android Prime", "shortname": "android_p", "description": "Чистий андроїд та швидка зарядка.", "price": "20000 UAH" },
+    { "id": 203, "name": "Fold Z", "shortname": "fold_z", "description": "Інноваційний гнучкий екран.", "price": "60000 UAH" },
+    { "id": 204, "name": "Budget Call", "shortname": "budget_c", "description": "Простий телефон для дзвінків.", "price": "5000 UAH" }
+  ]
+}

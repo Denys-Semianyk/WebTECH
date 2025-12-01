@@ -1,0 +1,9 @@
+{
+  "categoryName": "Ноутбуки",
+  "items": [
+    { "id": 101, "name": "ProBook G5", "shortname": "probook_g5", "description": "Надійний ноутбук для бізнесу. Lorem ipsum dolor sit amet.", "price": "25000 UAH" },
+    { "id": 102, "name": "Gaming X", "shortname": "gaming_x", "description": "Максимальна продуктивність в іграх. Lorem ipsum dolor sit amet.", "price": "45000 UAH" },
+    { "id": 103, "name": "UltraLight Air", "shortname": "ultralight", "description": "Легкий та тонкий, ідеальний для подорожей.", "price": "32000 UAH" },
+    { "id": 104, "name": "WorkStation Z", "shortname": "workstation", "description": "Для професійної роботи з графікою.", "price": "55000 UAH" }
+  ]
+}
