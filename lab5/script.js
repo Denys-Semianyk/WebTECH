@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Слухач події на кнопку "Catalog"
     catalogLink.addEventListener('click', (e) => {
-        e.preventDefault(); // Забороняємо перехід (хоча href немає, це хороша практика)
+        e.preventDefault(); 
         loadCatalog();
     });
 
