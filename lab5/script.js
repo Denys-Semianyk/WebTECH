@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         html += `
             <div class="text-center mt-5">
                 <hr>
-                <button id="btn-specials" class="btn btn-warning btn-lg px-5 fw-bold">🔥 Specials (Випадкова категорія)</button>
+                <button id="btn-specials" class="btn btn-warning btn-lg px-5 fw-bold"> Specials (Випадкова категорія)</button>
             </div>
         `;
 
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         data.items.forEach(item => {
             // Генерація картинки-заглушки
-            // Використовуємо placehold.co, бо він надійніший за place-hold.it
+
             const imgSrc = `https://placehold.co/200x200?text=${encodeURIComponent(item.name)}`;
 
             html += `
@@ -137,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadRandomCategory(categories) {
         if (!categories || categories.length === 0) return;
 
-        // Math.random() для вибору індексу
         const randomIndex = Math.floor(Math.random() * categories.length);
         const randomCategory = categories[randomIndex];
 
